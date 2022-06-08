@@ -1,7 +1,7 @@
 {
   "name": "movieapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "This API essentially provides an interactive database of information on films, directors, and genres. Additionally, users can register to create and manage a list of their favorite films.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,6 +18,7 @@
   "homepage": "https://github.com/SamSepehri/movieApi#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
   }
 }
