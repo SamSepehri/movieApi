@@ -53,9 +53,9 @@ let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
 
-/* Connecting to MongoDB FemMoviesDB */
+/* Connecting to MongoDB Movies */
 // a) Connect to Local DB
-//mongoose.connect('mongodb://localhost:27017/FemMoviesDB', { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect('mongodb://localhost:27017/Movies', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // b) Connect to Hosted DB
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
