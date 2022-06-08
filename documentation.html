@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>MyMovies API Documentation</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>MyMovies Application</h1>
+    <p>This is the server-side component of a “movies” web application.<br>
+      The web application will provide users with access to information about different movies,<br>
+      directors, and genres. Users will be able to sign up, update their personal information,<br>
+      and create a list of their favorite movies.
+    </p>
+    <br><br>
+    <h3>URL requests and endpoints</h3>
+    <br>
+    <table style="width:100%">
+      <tr>
+        <th>Client Request</th>
+        <th>URL</th>
+        <th>HTTP Method</th>
+        <th>Request Body Data Format</th>
+        <th>Response Body Data Format</th>
+      </tr>
+      <tr>
+        <td>Return a list of ALL movies to the user</td>
+        <td>/movies</td>
+        <td>GET</td>
+        <td>none</td>
+        <td>A JSON object holding data about all the movies</td>
+      </tr>
+      <tr>
+        <td>Return data (description, genre, director, image URL, whether it’s featured or not) about a single movie by
+          title to the user</td>
+        <td>/movies/:title</td>
+        <td>GET</td>
+        <td>none</td>
+        <td>A JSON object holding data about a single movie. Example:<br>
+          <pre>
+          {
+            "Genre": {
+                "Name": "Comedy",
+                "Description": "Comedy is a genre of film in which the main emphasis is on humor.
+                These films are designed to make the audience laugh through amusement
+                and most often work by exaggerating characteristics for humorous effect."
+            },
+            "Director": {
+                "Name": "Lulu Wang",
+                "Bio": "Lulu Wang is an American filmmaker. She is best known for
+                 writing and directing the comedy-drama films Posthumous and The Farewell.",
+                "Birthday": "1983-02-25T00:00:00.000Z"
+            },
+            "Actors": [],
+            "_id": "62163e877a5cb0bb78f90205",
+            "Title": "Posthumous",
+            "Description": "After false reports of his demise put him and his work on the map,
+            an artist decides to continue the charade by posing as his own brother.",
+            "ImagePath": "posthumous.png",
+            "Featured": false
+          }
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Return data about a genre (description) by name/title (e.g., “Thriller”)</td>
+        <td>/movies/genre/:Name</td>
+        <td>GET</td>
+        <td>none</td>
+        <td>A JSON object holding data about a genre. Example:<br>
+          <pre>
+          {
+            "Name": "Drama",
+            "Description": "The drama genre features stories with high stakes and a lot of conflicts.
+            They're plot-driven and demand that every character and scene move the story forward.
+            Dramas follow a clearly defined narrative plot structure, portraying real-life scenarios
+            or extreme situations with emotionally-driven characters"
+          }
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Return data about a director (bio, birth year, death year) by name</td>
+        <td>/movies/director/:Name</td>
+        <td>GET</td>
+        <td>none</td>
+        <td>A JSON object holding data about a director. Example:<br>
+          <pre>
+          {
+            "Name": "Lulu Wang",
+            "Bio": "Lulu Wang is an American filmmaker. She is best known for writing and directing
+            the comedy-drama films Posthumous and The Farewell.",
+            "Birthday": "1983-02-25T00:00:00.000Z"
+          }
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Allow new users to register</td>
+        <td>/users</td>
+        <td>POST</td>
+        <td>A JSON object holding the user information. Example:<br>
+          <pre>
+          {
+            "Username": "Petra65",
+            "Email": "p.musterfrau@mail.de",
+            "Password" "2873i4z",
+            "Birthday": "01.07.1965"
+          }
+          </pre>
+        </td>
+        <td>A JSON object holding the newly created user, including ObjectId. Example:<br>
+          <pre>
+          {
+            "Username": "Petra65",
+            "Password": "2873i4z",
+            "Email": "p.musterfrau@mail.de",
+            "Birthday": "1965-01-06T23:00:00.000Z",
+            "FavoriteMovies": [],
+            "_id": "6218d5c1708c2751cafb64f7",
+            "__v": 0
+          }
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Return a list of all users</td>
+        <td>/users</td>
+        <td>GET</td>
+        <td>none</td>
+        <td>A JSON object holding data about all users</td>
+      </tr>
+      <tr>
+        <td>Return data on a single user by name</td>
+        <td>/users/:Username</td>
+        <td>GET</td>
+        <td>none</td>
+        <td>A JSON object holding data about the requested user</td>
+      </tr>
+      <tr>
+        <td>Allow users to update their user info</td>
+        <td>/users/:Username</td>
+        <td>PUT</td>
+        <td>A JSON object holding the information that should be updated. Example:<br>
+          <pre>
+          {
+            "Password": "asdkjh45"
+          }
+          </pre>
+        </td>
+        <td>A JSON object holding data about the updated user</td>
+      </tr>
+      <tr>
+        <td>Return the list of favorite movies of this user</td>
+        <td>/users/:Username/movies</td>
+        <td>GET</td>
+        <td>none</td>
+        <td>A JSON object holding the _ids of the user's favorite movies</td>
+      </tr>
+      <tr>
+        <td>Allow users to add a movie to their list of favorites</td>
+        <td>/users/:Username/movies/:MovieID</td>
+        <td>POST</td>
+        <td>none</td>
+        <td>A JSON object holding data about the updated user</td>
+      </tr>
+      <tr>
+        <td>Allow users to remove a movie from their list of favorites</td>
+        <td>/users/:Username/movies/:MovieID</td>
+        <td>DELETE</td>
+        <td>none</td>
+        <td>A JSON object holding data about the updated user</td>
+      </tr>
+      <tr>
+        <td>Allow existing users to deregister</td>
+        <td>/users/:Username</td>
+        <td>DELETE</td>
+        <td>none</td>
+        <td>A success message indicating that the profile was successfully deleted.</td>
+      </tr>
+      <tr>
+        <td>User login</td>
+        <td>/login</td>
+        <td>POST</td>
+        <td>Params: Username & Password</td>
+        <td>A JSON object holding data about the user and authorization token.</td>
+      </tr>
+    </table>
+  </body>
+
+</html>
