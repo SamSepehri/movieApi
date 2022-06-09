@@ -30,6 +30,7 @@
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "typedoc": "^0.22.17",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
