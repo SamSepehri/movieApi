@@ -2,7 +2,7 @@
 
 ## Description
 
-I developed this Movie_Api as part of my Full-Stack Web Development Course at CareerFoundry.
+I developed this movieApi as part of my Full-Stack Web Development Course at CareerFoundry.
 
 ### What technology usage and why?
 
@@ -31,7 +31,7 @@ Being a beginner I obviously learned a lot from implementing this API. The most 
 ### ... as a developer, who wants to work with the project
 1. Clone or download repository ...
 ```bash
-git clone https://github.com/F3NJ0/movie_api.git
+git clone https://github.com/SamSepehri/movieApi.git
 ```
 
 
@@ -50,8 +50,8 @@ npm run start
 ```
 
 ### ... as a movie enthusiast, who wants to see the movies
-In order to use the application you have to register as a user at https://femmovies.herokuapp.com/users and then
-https://femmovies.herokuapp.com/login to get the jwt token.
+In order to use the application you have to register as a user at https://samcinema2022.herokuapp.com/users and then
+https://samcinema2022.herokuapp.com/login to get the jwt token.
 
 ## Technical Requirements (according to project brief)
 
@@ -78,42 +78,8 @@ https://femmovies.herokuapp.com/login to get the jwt token.
 
 Open this link to see a documentation of the used endpoints:
 
-https://femmovies.herokuapp.com/documentation.html
+https://samcinema2022.herokuapp.com/documentation.html
 
-### Creation of HTTP endpoints and route handlers with subsequent testing in Postman
-**Postman: Testing of endpoints**
-Allow new users to register
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Allow%20new%20users%20to%20register.png">
-
-Allow existing users to deregister
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Allow%20existing%20users%20to%20deregister.png">
-
-Allow users to add a movie to list of favorites
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Allow%20users%20to%20add%20a%20movie%20to%20list%20of%20favorites.png">
-
-Allow user to remove a movie from list of favorites
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Allow%20users%20to%20remove%20a%20movie%20from%20list%20of%20favorties.png">
-
-Allow users to update user info
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Allow%20users%20to%20update%20user%20info.png">
-
-Return a list of all users
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Return%20a%20list%20of%20all%20users.png">
-
-Return data about a director
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Return%20data%20about%20a%20director.png">
-
-Return data about a Genre
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Return%20data%20about%20a%20genre.png">
-
-Return data about a single movie
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Return%20data%20about%20a%20single%20movie.png">
-
-Return data on a single user by name
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Return%20data%20on%20a%20single%20user%20by%20name.png">
-
-Return a list of all movies
-<img src="https://github.com/F3NJ0/movie_api/blob/f8fee7518c6308859bae77c0cbc749ccc7dbfb02/img/Return%20list%20of%20all%20movies.png">
 
 
 
@@ -157,7 +123,6 @@ Process:
 * Implement basic HTTP authentication for initial login requests
 * implement login query with generation of JWT token, see screenshot below demonstration working endpoint in Postman:
 
-<img src="https://github.com/F3NJ0/movie_api/blob/e76ae60627f20594db03740e68689624f33ceee3/img/Login%20with%20jwt%20web%20token.png" alt="Screenshot Postman with POST endpoint for login">
 
 
 
@@ -166,12 +131,7 @@ Process:
 * CORS in Express (set to allow for all origins)
 * Bcrypt for Password hashing (see screenshot)
 
-<img src="https://github.com/F3NJ0/movie_api/blob/e76ae60627f20594db03740e68689624f33ceee3/img/Register%20with%20password%20hashing.png" alt="Screenshot successful password hashing">
 
-
-* Adjust Environment variable to not reveal Connection URI
-
-<img src="https://github.com/F3NJ0/movie_api/blob/2e58a234b0312895c74772b5f8b6ece05f9f04e2/img/Heroku%20config%20vars.png" alt="Screenshot adjusting environment variable on HEROKU">
 
 
 
